@@ -26,6 +26,32 @@ A full-stack stock trading platform inspired by Zerodha.
 - Holdings Management
 - Orders and Positions
 
+## Screenshots
+
+### Landing Page
+
+![Landing Page](screenshots/landing-page.png)
+
+### Login Page
+
+![Login Page](screenshots/login.png)
+
+### Signup Page
+
+![Signup Page](screenshots/signup.png)
+
+### Dashboard
+
+![Dashboard](screenshots/dashboard.png)
+
+### Holdings
+
+![Holdings](screenshots/holdings.png)
+
+### Orders
+
+![Orders](screenshots/orders.png)
+
 ## Installation
 
 1. Clone the repository.
