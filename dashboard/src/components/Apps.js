@@ -5,7 +5,7 @@ function Apps() {
     <div className="apps-container">
       <div className="apps-content">
         <div className="apps-icon">
-          <i class="fa fa-th-large" aria-hidden="true"></i>
+          <i className="fa fa-th-large" aria-hidden="true"></i>
         </div>
 
         <h1>More Apps Coming Soon!</h1>

@@ -42,7 +42,8 @@ const Login = () => {
       if (success) {
         handleSuccess(message);
         setTimeout(() => {
-          window.location.href = "https://stock-trading-dashboard.netlify.app/";
+          window.location.href =
+            "https://stock-trading-dashboard-app.netlify.app/";
         }, 1000);
       } else {
         handleError(message);
