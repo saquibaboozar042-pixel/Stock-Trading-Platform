@@ -19,17 +19,17 @@ A full-stack stock trading platform inspired by Zerodha, built using the MERN st
 
 ## 📁 Project Structure
 
-Stock-Trading-Platform/
-│
-├── backend/          # Server-side code and REST APIs
-│
-├── dashboard/        # Trading dashboard application
-│
-├── frontend/         # User authentication and landing pages
-│
-├── screenshots/      # Project screenshots
-│
-└── README.md
+- Stock-Trading-Platform/
+- │
+- ├── backend/          # Server-side code and REST APIs
+- │
+- ├── dashboard/        # Trading dashboard application
+- │
+- ├── frontend/         # User authentication and landing pages
+- │
+- ├── screenshots/      # Project screenshots
+- │
+- └── README.md
 
 
 ## ✨ Features
