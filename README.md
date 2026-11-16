@@ -1,30 +1,80 @@
-# Stock Trading Platform
+Zerodha Clone – Stock Trading Platform
+A full-stack stock trading platform inspired by Zerodha, built using the MERN stack. It provides user authentication and a trading dashboard to manage watchlists, buy orders, holdings, and positions.
 
-A full-stack stock trading platform inspired by Zerodha.
+🚀 Live Demo
+Dashboard: https://stock-trading-dashboard-app.netlify.app/
+Authentication: https://stock-trading-auth.netlify.app/
+Backend: https://stock-trading-backend-2sux.onrender.com/
 
-## Tech Stack
+🛠️ Tech Stack
+Frontend: React.js, JavaScript, HTML, CSS
+Backend: Node.js, Express.js
+Database: MongoDB
+Authentication: JWT, bcrypt
+Deployment: Netlify (Frontend), Render (Backend)
+Version Control: Git & GitHub
 
-- React.js
-- Node.js
-- Express.js
-- MongoDB
-- JavaScript
-- HTML & CSS
+📁 Project Structure
 
-## Project Structure
+Zerodha-Clone/
+│
+├── backend/       # Server-side code and REST APIs
+├── dashboard/     # Trading dashboard application
+├── frontend/      # User authentication and landing pages
+│
+├── screenshots/   # Project screenshots
+└── README.md
 
-- backend – Server-side code and APIs
-- dashboard – Trading dashboard
-- frontend – User authentication and landing pages
+✨ Features
 
-## Features
+User Signup and Login
+Secure Authentication using JWT
+Password Hashing using bcrypt
+Stock Watchlist
+Buy Orders
+Holdings Management
+Orders Management
+Positions Management
+Separate Authentication and Dashboard Applications
+MongoDB Database Integration
 
-- User Signup and Login
-- Secure Authentication using JWT
-- Stock Watchlist
-- Buy Orders
-- Holdings Management
-- Orders and Positions
+⚙️ Installation & Setup
+
+1. Clone the Repository
+
+git clone https://github.com/saquibaboozar042-pixel/Stock-Trading-Platform.git
+cd Stock-Trading-Platform
+
+2. Backend Setup
+
+cd backend
+npm install
+
+Configure your environment variables in a .env file:
+
+MONGO_URL=your_mongodb_connection_string
+TOKEN_KEY=your_jwt_secret
+PORT=3002
+
+Start the backend:
+
+npm start
+
+3. Frontend Setup
+
+Open a new terminal:
+
+cd frontend
+npm install
+npm start
+
+4. Dashboard Setup
+
+Open another terminal:
+
+cd dashboard
+npm install
+npm start
 
 ## Screenshots
 
@@ -52,13 +102,11 @@ A full-stack stock trading platform inspired by Zerodha.
 
 ![Orders](screenshots/orders.png)
 
-## Installation
 
-1. Clone the repository.
-2. Install dependencies in each folder.
-3. Configure environment variables.
-4. Start the backend, frontend and dashboard.
-
-## Author
+👨‍💻 Author
 
 Saquib Aboozar
+
+GitHub: https://github.com/saquibaboozar042-pixel
+
+This project was built for learning and demonstrating full-stack web development concepts. It is not a real brokerage platform and does not execute actual stock trades.
