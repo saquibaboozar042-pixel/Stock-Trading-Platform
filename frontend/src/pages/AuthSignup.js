@@ -44,7 +44,7 @@ const Signup = () => {
         {
           ...inputValue,
         },
-        { withCredentials: true },
+        { withCredentials: true }
       );
 
       const { success, message } = data;
@@ -63,13 +63,17 @@ const Signup = () => {
         setTimeout(() => {
           navigate("/login");
         }, 1000);
+
       } else {
         handleError(message);
       }
+
     } catch (error) {
       console.log(error);
 
-      handleError(error.response?.data?.message || "Something went wrong");
+      handleError(
+        error.response?.data?.message || "Something went wrong"
+      );
     }
   };
 
