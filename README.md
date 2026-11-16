@@ -6,7 +6,7 @@ A full-stack stock trading platform inspired by Zerodha, built using the MERN st
 
 - **Dashboard:** https://stock-trading-dashboard-app.netlify.app/
 - **Authentication:** https://stock-trading-auth.netlify.app/
-- **Backend:** https://stock-trading-backend-2sux.onrender.com/
+
 
 ## 🛠️ Tech Stack
 
@@ -51,45 +51,45 @@ Follow these steps to run the project locally.
 
 ### 1. Clone the Repository
 
-git clone https://github.com/saquibaboozar042-pixel/Stock-Trading-Platform.git
-cd Stock-Trading-Platform
+- git clone https://github.com/saquibaboozar042-pixel/Stock-Trading-Platform.git
+- cd Stock-Trading-Platform
 
 ### 2. Backend Setup
 
 Navigate to the backend folder:
 
-cd backend
-npm install
+- cd backend
+- npm install
 
 
 Create a .env file inside the backend folder and add the following environment variables:
 
-MONGO_URL=your_mongodb_connection_string
-TOKEN_KEY=your_jwt_secret
-PORT=3002
+- MONGO_URL=your_mongodb_connection_string
+- TOKEN_KEY=your_jwt_secret
+- PORT=3002
 
 
 Start the backend server:
 
-npm start
+- npm start
 
 
 ### 3. Authentication Frontend Setup
 
-Open a new terminal from the project root directory:
+- Open a new terminal from the project root directory:
 
-cd frontend
-npm install
-npm start
+- cd frontend
+- npm install
+- npm start
 
 
 ### 4. Dashboard Setup
 
-Open another terminal from the project root directory:
+- Open another terminal from the project root directory:
 
-cd dashboard
-npm install
-npm start
+- cd dashboard
+- npm install
+- npm start
 
 ## 📸  Screenshots
 
