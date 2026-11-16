@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "./Auth.css";
 
 const Login = () => {
-  const navigate = useNavigate();
   const [inputValue, setInputValue] = useState({
     email: "",
     password: "",
@@ -32,7 +31,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:3002/login",
+        "https://stock-trading-backend-2sux.onrender.com/login",
         {
           ...inputValue,
         },
@@ -43,7 +42,7 @@ const Login = () => {
       if (success) {
         handleSuccess(message);
         setTimeout(() => {
-          window.location.href = "http://localhost:3000/";
+          window.location.href = "https://stock-trading-dashboard.netlify.app/";
         }, 1000);
       } else {
         handleError(message);
@@ -54,15 +53,13 @@ const Login = () => {
       console.log("Status Code:", error.response?.status);
 
       handleError(error.response?.data?.message || error.message);
-    }
-    finally{
+    } finally {
       setInputValue({
-      ...inputValue,
-      email: "",
-      password: "",
-    });
+        ...inputValue,
+        email: "",
+        password: "",
+      });
     }
-    
   };
 
   return (

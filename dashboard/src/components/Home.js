@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -13,19 +12,19 @@ function Home() {
     const verifyUser = async () => {
       try {
         const { data } = await axios.post(
-          "http://localhost:3002/",
+          "https://stock-trading-backend-2sux.onrender.com/",
           {},
-          { withCredentials: true }
+          { withCredentials: true },
         );
 
         if (data.status) {
           setUsername(data.user);
         } else {
-          window.location.href = "http://localhost:3001/login";
+          window.location.href = "https://stock-trading-auth.netlify.app/login";
         }
       } catch (error) {
         console.log("Verification error:", error);
-        window.location.href = "http://localhost:3001/login";
+        window.location.href = "https://stock-trading-auth.netlify.app/login";
       } finally {
         setLoading(false);
       }

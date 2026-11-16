@@ -15,25 +15,20 @@ function Menu() {
     setIsProfileDropdownOpen(!isProfileDropdownOpen);
   };
 
-  
-
-
   const handleLogout = async () => {
-  try {
-    await axios.post(
-      "http://localhost:3002/logout",
-      {},
-      { withCredentials: true }
-    );
+    try {
+      await axios.post(
+        "https://stock-trading-backend-2sux.onrender.com/logout",
+        {},
+        { withCredentials: true },
+      );
 
-    setIsProfileDropdownOpen(false);
-    window.location.href = "http://localhost:3001/login";
-
-  } catch (error) {
-    console.log("Logout Error:", error);
-  }
-};
-
+      setIsProfileDropdownOpen(false);
+      window.location.href = "https://stock-trading-auth.netlify.app/login";
+    } catch (error) {
+      console.log("Logout Error:", error);
+    }
+  };
 
   const menuClass = "menu";
   const activeMenuClass = "menu selected";

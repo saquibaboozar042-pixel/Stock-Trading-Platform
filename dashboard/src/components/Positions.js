@@ -3,15 +3,16 @@ import axios from "axios";
 
 // import { positions } from "../data/data";
 
-function Positions () {
-
+function Positions() {
   const [allPositions, setAllPositions] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3002/allPositions").then((res) => {
-      console.log(res.data);
-      setAllPositions(res.data);
-    });
+    axios
+      .get("https://stock-trading-backend-2sux.onrender.com/allPositions")
+      .then((res) => {
+        console.log(res.data);
+        setAllPositions(res.data);
+      });
   }, []);
 
   return (
@@ -29,7 +30,7 @@ function Positions () {
             <th>P&L</th>
             <th>Chg.</th>
           </tr>
-          
+
           {allPositions.map((stock, index) => {
             const curValue = stock.price * stock.qty;
             const isProfit = curValue - stock.avg * stock.qty >= 0.0;
@@ -43,8 +44,10 @@ function Positions () {
                 <td>{stock.qty}</td>
                 <td>{stock.avg.toFixed(2)}</td>
                 <td>{stock.price.toFixed(2)}</td>
-                
-                <td className={profClass}>{(curValue - stock.avg * stock.qty).toFixed(2)}</td>
+
+                <td className={profClass}>
+                  {(curValue - stock.avg * stock.qty).toFixed(2)}
+                </td>
 
                 <td className={dayClass}>{stock.day}</td>
               </tr>
@@ -54,6 +57,6 @@ function Positions () {
       </div>
     </>
   );
-};
+}
 
 export default Positions;

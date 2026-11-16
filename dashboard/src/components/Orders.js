@@ -1,17 +1,16 @@
-
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-
-function Orders () {
-
+function Orders() {
   const [allOrders, setAllOrders] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3002/allOrders").then((res) => {
-      console.log(res.data);
-      setAllOrders(res.data);
-    });
+    axios
+      .get("https://stock-trading-backend-2sux.onrender.com/allOrders")
+      .then((res) => {
+        console.log(res.data);
+        setAllOrders(res.data);
+      });
   }, []);
 
   return (
@@ -26,16 +25,14 @@ function Orders () {
             <th>Price</th>
             <th>Side</th>
           </tr>
-          
-          {allOrders.map((stock, index) => {
 
+          {allOrders.map((stock, index) => {
             return (
               <tr key={index}>
                 <td>{stock.name}</td>
                 <td>{stock.qty}</td>
                 <td>{stock.price.toFixed(2)}</td>
                 <td>{stock.mode}</td>
-                
               </tr>
             );
           })}
@@ -43,6 +40,6 @@ function Orders () {
       </div>
     </>
   );
-};
+}
 
 export default Orders;

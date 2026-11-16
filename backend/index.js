@@ -14,7 +14,6 @@ const { HoldingsModel } = require("./model/HoldingsModel");
 const { PositionsModel } = require("./model/PositionsModel");
 const { OrdersModel } = require("./model/OrdersModel");
 
-
 // Authentication Routes
 const authRoute = require("./Routes/AuthRoute");
 
@@ -23,18 +22,23 @@ const uri = process.env.MONGO_URL;
 
 const app = express();
 
-app.use(cors({
-  origin: ["http://localhost:3000", "http://localhost:3001"],
-  credentials: true,
-}));
+const allowedOrigins = (
+  process.env.CLIENT_URLS || "http://localhost:3000,http://localhost:3001"
+)
+  .split(",")
+  .map((origin) => origin.trim());
 
-
+app.use(
+  cors({
+    origin: allowedOrigins,
+    credentials: true,
+  }),
+);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use("/", authRoute);
-
 
 app.get("/allHoldings", async (req, res) => {
   let allHoldings = await HoldingsModel.find({});
@@ -46,7 +50,6 @@ app.get("/allPositions", async (req, res) => {
   res.json(allPositions);
 });
 
-
 app.post("/newOrder", async (req, res) => {
   let newOrder = new OrdersModel({
     name: req.body.name,
@@ -55,10 +58,9 @@ app.post("/newOrder", async (req, res) => {
     mode: req.body.mode,
   });
 
-    await newOrder.save();
+  await newOrder.save();
 
   if (req.body.mode === "BUY") {
-
     const avg = Number(req.body.price);
     const currentPrice = Number(req.body.currentPrice);
     const previousClose = Number(req.body.previousClose);
@@ -87,9 +89,7 @@ app.get("/allOrders", async (req, res) => {
   res.json(allOrders);
 });
 
-
-
-  mongoose
+mongoose
   .connect(uri)
   .then(() => {
     console.log("DB connected!");

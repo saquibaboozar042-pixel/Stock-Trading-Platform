@@ -10,12 +10,11 @@ import "./BuyActionWindow.css";
 const BuyActionWindow = ({ uid, currentPrice, previousClose }) => {
   const { closeBuyWindow } = useContext(GeneralContext);
 
-
   const [stockQuantity, setStockQuantity] = useState(1);
   const [stockPrice, setStockPrice] = useState(currentPrice);
 
   const handleBuyClick = () => {
-    axios.post("http://localhost:3002/newOrder", {
+    axios.post("https://stock-trading-backend-2sux.onrender.com/newOrder", {
       name: uid,
       qty: stockQuantity,
       price: stockPrice,
@@ -27,11 +26,8 @@ const BuyActionWindow = ({ uid, currentPrice, previousClose }) => {
     closeBuyWindow();
   };
 
-  
-
   const handleCancelClick = () => {
     closeBuyWindow();
-    
   };
 
   return (
